@@ -1,9 +1,13 @@
-import React from 'react'
+import About from "@/components/post/About"
+
+
 
 function AboutPage() {
+
   return (
     <div>
-      AboutPage
+      About Page
+      {/* <About/> */}
     </div>
   )
 }
