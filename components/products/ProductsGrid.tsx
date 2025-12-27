@@ -1,14 +1,13 @@
 import { Product } from "@/services/product/product.types";
 import { formatCurrency } from "@/utils/format";
 import Link from "next/link";
-import React from "react";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import FavoriteToggleButton from "./FavoriteToggleButton";
 
 function ProductsGrid({ products }: { products: Product[] }) {
   return (
-    <div className="pt-12 grid gap-4 md:grid-cols-2 md:grid-cols-3">
+    <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {products.map((product) => {
         const { name, price, image } = product;
         const productId = product._id;
