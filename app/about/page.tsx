@@ -1,4 +1,4 @@
-import About from "@/components/post/About";
+
 
 function AboutPage() {
   return (
