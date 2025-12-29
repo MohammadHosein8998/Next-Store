@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ThemeProvider } from "./theme-provider";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Toaster } from "sonner";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   // ✅ safe: lazy init
@@ -22,6 +23,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <Toaster/>
       <QueryClientProvider client={queryClient}>{children}
         <ReactQueryDevtools initialIsOpen={false}/>
       </QueryClientProvider>
