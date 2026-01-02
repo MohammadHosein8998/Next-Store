@@ -7,10 +7,21 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.pexels.com",
-        pathname: "/photos/**",  
+        pathname: "/photos/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "4000",
+        pathname: "/assets/**",
       },
     ],
   },
+  experimental:{
+    serverActions:{
+      bodySizeLimit : '4mb'
+    }
+  }
 };
 
 export default nextConfig;

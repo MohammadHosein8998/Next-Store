@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 type CheckboxInputProps = {
   name: string;
   label: string;
-  defaultChecked: boolean;
+  defaultChecked?: boolean;
 };
 
 function CheckBoxInput({

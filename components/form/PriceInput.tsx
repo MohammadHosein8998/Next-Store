@@ -6,8 +6,6 @@ type FormInputNumberProps = {
   defaultValue?: number;
 };
 
-import React from "react";
-
 function PriceInput({ defaultValue }: FormInputNumberProps) {
   return (
     <div className="mb-2">

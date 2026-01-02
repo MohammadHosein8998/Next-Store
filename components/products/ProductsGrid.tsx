@@ -10,6 +10,9 @@ function ProductsGrid({ products }: { products: Product[] }) {
     <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {products.map((product) => {
         const { name, price, image } = product;
+        const imageDir = `${process.env.NEXT_PUBLIC_API_IMAGE}${image}`;
+        console.log("imageDir : ", imageDir);
+
         const productId = product._id;
         const dollarAmount = formatCurrency(price);
         return (
@@ -19,7 +22,7 @@ function ProductsGrid({ products }: { products: Product[] }) {
                 <CardContent>
                   <div className="relative h-64 md:h-48 rounded overflow-hidden">
                     <Image
-                      src={image}
+                      src={imageDir}
                       alt={name}
                       fill
                       unoptimized

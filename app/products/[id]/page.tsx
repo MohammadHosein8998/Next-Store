@@ -15,6 +15,7 @@ async function SingleProductPage({ params }: PageProps) {
   const { id } = await params;
   const product = await fetchSingleProduct(id);
   const { name, image, company, description, price } = product;
+  const imageDir = `${process.env.NEXT_PUBLIC_API_IMAGE}${image}`
   const dollarAmount = formatCurrency(price);
   console.log(product);
   return (
@@ -24,7 +25,7 @@ async function SingleProductPage({ params }: PageProps) {
         {/* IMAGE FIRST COL */}
         <div className="relative h-full">
           <Image
-            src={image}
+            src={imageDir}
             alt={name}
             unoptimized
             fill
