@@ -30,13 +30,13 @@ export const imageSchema = z.object({
 });
 
 function validateImageFile() {
-  const maxUploadSize = 1024 * 1024;
+  const maxUploadSize = 3 * 1024 * 1024;
   const acceptedFileType = ["image/"];
   return z
     .instanceof(File)
     .refine((file) => {
       return !file || file.size <= maxUploadSize;
-    }, "file size must be less than 1MB!")
+    }, "file size must be less than 3MB!")
     .refine((file) => {
       return (
         !file || acceptedFileType.some((type) => file.type.startsWith(type))
@@ -51,7 +51,6 @@ export function validateWithZodSchema<T>(
   const result = schema.safeDecode(data);
   if (!result.success) {
     const issues = result.error.issues.map((error) => error.message);
-    console.log("issues ", issues);
     throw new Error(issues.join(","));
   }
   return result.data;
